@@ -1,0 +1,106 @@
+#include<stdio.h>
+int size,stop=-1,choice,front=-1,rear=-1,new_ele,i,search,found;
+void main(){
+printf("Enter the Size");
+scanf("%d",&size);
+int queue[size];
+while(stop!=0){
+printf("\n1.Enqueue\n 2.Dequeue\n 3.Show\n 4.Search\n 5.Exit\n");
+printf("Enter the Choice:");
+scanf("%d",&choice);
+switch(choice){
+
+  case 1:
+        if((rear+1)%size==front){
+printf("\n***********Queue is Full***********\n");
+printf("Front= %d and Rear= %d",front,rear);
+}
+else{
+if(front==-1){
+front=0;
+}
+
+rear=(rear+1)%size;
+printf("\nEnter the Element: ");
+scanf("%d",&new_ele);
+queue[rear]=new_ele;
+
+printf("Front= %d and Rear= %d\n",front,rear);
+printf("***Enqueued***");
+}
+break;
+
+case 2:
+        if(front==-1){
+printf("***Queue Empty***");
+printf("Front= %d and Rear= %d",front,rear);
+}
+else{
+printf("Dequeue %d ",queue[front]);
+if(front==rear){
+front=rear-1;
+}else{
+front=(front+1)%size;
+}
+printf("Front= %d and Rear= %d",front,rear);
+}
+break;
+
+case 3:
+if(front==-1){
+printf("***Queue is Empty***\n");
+}else{
+printf("Queue: ");
+if(front<=rear){
+ for(i=front; i<=rear;i++){
+   printf(" %d ",queue[i]);
+}
+}
+else{
+for(i=front;i<size;i++){
+printf(" %d ",queue[i]);
+}
+for(i=0;i<=rear;i++){
+printf(" %d ",queue[i]);
+}
+}
+}
+break;
+
+case 4:
+
+if(front==-1&&rear==-1){
+printf("*****Queue is Empty*****\n");
+}
+else{
+printf("Enter the Element: ");
+scanf("%d",&search);
+int found=0;
+for(i=front;i<=rear;i++){
+if(queue[i]==search) {
+ printf("%d found at index %d", search,i);
+found=1;
+break;
+}
+}
+for(i=rear;i<=front;i++){
+if(queue[i]==search){
+printf("%d found at index %d",search,i);
+found=1;
+break;
+}
+}
+if(found==-0){
+printf("%d not found in the queue ",search);
+}
+}
+break;
+case 5:
+        printf("***EXIT***");
+        stop=0;
+        break;
+default:
+printf("**************INVALID CHOICE**********************");
+}
+}
+}
