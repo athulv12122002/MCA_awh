@@ -4,6 +4,6 @@ b = 1
 fibonacci = [a]
 print(a)
 print(b)
-for i in range(1, x):
+for i in range(1, x-1):
     a, b = b, a + b  
     print(b)
