@@ -1,0 +1,21 @@
+body{
+	  background-color: #AF7AC5;
+	 }
+h1{
+	font-family:monospace;
+	text-align:center;
+  }
+  #form-tag{
+	  display: flex;
+	justify-content: center;
+  }
+.formhead{
+	color:red;
+	text-align:center;
+  }
+ .form-main{
+	 background-color: #F0F8FF;
+	
+	align-items: center;
+	 border:1px solid black;
+	 width:600px;
