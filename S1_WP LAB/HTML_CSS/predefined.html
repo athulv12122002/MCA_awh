@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Math Objects in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>String and Math Objects in JavaScript</h1>
+
+    <h2>String Object</h2>
+    <p>The <code>String</code> object provides methods for working with strings:</p>
+
+    <h3>Example 1: Concatenation</h3>
+    <pre>
+        <code>
+            var str1 = "Hello";
+            var str2 = "World";
+            var result = str1.concat(" ", str2);
+            console.log(result); // Output: Hello World
+        </code>
+    </pre>
+
+    <h3>Example 2: Length</h3>
+    <pre>
+        <code>
+            var str = "JavaScript";
+            var length = str.length;
+            console.log(length); // Output: 10
+        </code>
+    </pre>
+
+    <h3>Example 3: Substring</h3>
+    <pre>
+        <code>
+            var str = "Hello World";
+            var substring = str.substring(6, 11);
+            console.log(substring); // Output: World
+        </code>
+    </pre>
+
+    <h2>Math Object</h2>
+    <p>The <code>Math</code> object provides mathematical constants and functions:</p>
+
+    <h3>Example 4: Random Number</h3>
+    <pre>
+        <code>
+            var randomNumber = Math.random();
+            console.log(randomNumber);
+        </code>
+    </pre>
+
+    <h3>Example 5: Round a Number</h3>
+    <pre>
+        <code>
+            var num = 5.67;
+            var roundedNum = Math.round(num);
+            console.log(roundedNum); // Output: 6
+        </code>
+    </pre>
+
+    <h3>Example 6: Square Root</h3>
+    <pre>
+        <code>
+            var squareRoot = Math.sqrt(25);
+            console.log(squareRoot); // Output: 5
+        </code>
+    </pre>
+
+</body>
+</html>
