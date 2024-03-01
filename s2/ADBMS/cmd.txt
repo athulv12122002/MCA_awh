@@ -1,0 +1,64 @@
+# create database
+---------------
+create database sample;
+
+#show databases
+
+show databases
+
+# changing database
+-----------------
+use sample;
+
+# create table
+-----------
+create table demo (id int,name varchar(20));
+
+#
+------------
+insert into demo values(2,"jobby");
+#
+------------------
+
+SHOW COLUMNS FROM demo;
+
+select * from demo;
+
+select name from demo;
+
+delete from demo where name="ponnu";
+
+ alter table demo drop column name;
+
+ alter table demo add column name varchar(20);
+
+update demo set name="ayesha bin muhammad kabeer" where id=3;
+
+update demo set name="robin zakriya" where id=1;
+
+update demo set  id=1 where name="robin zakriya";
+-------------------------------------------------
+select distinct name from demo;
+-------------------------------------------------
+#to retrieve data of specified...
+select * from demo where id=10;
+------------------------------------------------
+#greater than || less than || not equal || between
+
+select * from demo where id<5;
+select * from demo where id>5;
+select * from demo where id>=5;
+select * from demo where id<=5;
+select * from demo where id!=5;
+select * from demo where id>5 and id<10;
+------------------------------------------------
+#same starting
+ 
+select column name from table name where column name like 'n%'
+select name from demo where name like 'n%';
+select * from demo where name like 'r%';
+
+select * from demo where name like '_a%'; 	#starting any alphabet second alphabet distinct
+select * from demo where name like '__a%';
+select name from demo where name like '%n%';
+-------------------------------------------------
