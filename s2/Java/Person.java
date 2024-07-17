@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Person {
     String name;
     String gender;
@@ -59,18 +61,49 @@ class Teacher extends Employee {
 
 public class Main {
     public static void main(String[] args) {
-        Teacher[] teachers = new Teacher[3];
+        Scanner scanner = new Scanner(System.in);
 
-        teachers[0] = new Teacher("John Doe", "Male", "123 Main St", 35,
-                101, "School A", "M.Sc.", 50000,
-                "Mathematics", "Science", 1001);
-        teachers[1] = new Teacher("Jane Smith", "Female", "456 Elm St", 28,
-                102, "School B", "B.Ed.", 45000,
-                "English", "Language Arts", 1002);
-        teachers[2] = new Teacher("Robert Johnson", "Male", "789 Oak St", 40,
-                103, "School C", "Ph.D.", 60000,
-                "Physics", "Physical Sciences", 1003);
+        System.out.print("Enter the number of teachers: ");
+        int numTeachers = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
 
+        Teacher[] teachers = new Teacher[numTeachers];
+
+        for (int i = 0; i < numTeachers; i++) {
+            System.out.println("\nEnter details for Teacher " + (i + 1) + ":");
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            System.out.print("Gender: ");
+            String gender = scanner.nextLine();
+            System.out.print("Address: ");
+            String address = scanner.nextLine();
+            System.out.print("Age: ");
+            int age = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            System.out.print("Employee ID (Emp ID): ");
+            int empId = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            System.out.print("Company Name: ");
+            String companyName = scanner.nextLine();
+            System.out.print("Qualification: ");
+            String qualification = scanner.nextLine();
+            System.out.print("Salary: ");
+            double salary = scanner.nextDouble();
+            scanner.nextLine(); // Consume newline
+            System.out.print("Subject: ");
+            String subject = scanner.nextLine();
+            System.out.print("Department: ");
+            String department = scanner.nextLine();
+            System.out.print("Teacher ID: ");
+            int teacherId = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            teachers[i] = new Teacher(name, gender, address, age,
+                    empId, companyName, qualification, salary,
+                    subject, department, teacherId);
+        }
+
+        System.out.println("\nTeacher Details:");
         for (Teacher teacher : teachers) {
             teacher.displayDetails();
         }
